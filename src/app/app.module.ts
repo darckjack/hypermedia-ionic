@@ -3,17 +3,25 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { LoginPage } from "../pages/login/login";
+import { ProductListPage } from "../pages/product-list/product-list";
+import { ProductPage } from "../pages/product/product";
+import { CartPage } from "../pages/cart/cart";
+import { CheckoutPage } from "../pages/checkout/checkout";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProductsProvider } from '../providers/products/products';
+import { CartProvider } from '../providers/cart/cart';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage
+    LoginPage,
+    ProductListPage,
+    ProductPage,
+    CartPage,
+    CheckoutPage
   ],
   imports: [
     BrowserModule,
@@ -22,13 +30,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage
+    LoginPage,
+    ProductListPage,
+    ProductPage,
+    CartPage,
+    CheckoutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ProductsProvider,
+    CartProvider
   ]
 })
 export class AppModule {}
