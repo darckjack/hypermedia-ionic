@@ -19,10 +19,23 @@ import { Product } from '../../models/product-model';
 })
 export class ProductListPage {
 public products: Product[];
+public category: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
               private productsProvider: ProductsProvider, private cartProvider: CartProvider) {
-    this.products = productsProvider.products;
+    
+    this.category = this.navParams.data;
+    console.log(this.navParams.data.length);
+    if (this.navParams.data.length != undefined) {
+      this.products = [];
+      for (let index = 0; index < this.productsProvider.products.length; index++) {
+        if(this.productsProvider.products[index].category == this.category) {
+          this.products.push(this.productsProvider.products[index]);
+        }
+      }
+    } else {
+      this.products = productsProvider.products;
+    }
   }
 
   addToCart(product: Product) {

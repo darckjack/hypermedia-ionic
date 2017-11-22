@@ -8,6 +8,7 @@ import { ProductListPage } from "../pages/product-list/product-list";
 import { ProductPage } from "../pages/product/product";
 import { CartPage } from "../pages/cart/cart";
 import { CheckoutPage } from "../pages/checkout/checkout";
+import { CategoriesPage } from '../pages/categories/categories';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,6 +26,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: ProductListPage },
+      { title: 'Categorias', component: CategoriesPage },
       { title: 'Carrito', component: CartPage }
     ];
 

@@ -8,6 +8,7 @@ import { ProductListPage } from "../pages/product-list/product-list";
 import { ProductPage } from "../pages/product/product";
 import { CartPage } from "../pages/cart/cart";
 import { CheckoutPage } from "../pages/checkout/checkout";
+import { CategoriesPage } from "../pages/categories/categories";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +22,8 @@ import { CartProvider } from '../providers/cart/cart';
     ProductListPage,
     ProductPage,
     CartPage,
-    CheckoutPage
+    CheckoutPage,
+    CategoriesPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { CartProvider } from '../providers/cart/cart';
     ProductListPage,
     ProductPage,
     CartPage,
-    CheckoutPage
+    CheckoutPage,
+    CategoriesPage
   ],
   providers: [
     StatusBar,
